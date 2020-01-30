@@ -8,17 +8,14 @@ import java.io.*;
 
 public class DataBaseUserDAO implements Registration {
 
-    BufferedReader br = null;
-
     @Override
     public void singIn(String login, String password) throws DAOExeption {
         try{
             PrintWriter pw = new PrintWriter("User.txt");
             pw.println(login + " " + password);
-
         }
         catch (IOException e ){
-            System.out.println("Error is: " + e);
+            System.out.println("Error writing in file");
         }
     }
 

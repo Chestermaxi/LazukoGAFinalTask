@@ -13,6 +13,9 @@ public class UserServicesImpl implements UserServices {
         if(login == null || login.isEmpty()){
             throw new ServicesException("Incorrect login");
         }
+        if(password == null || password.isEmpty()){
+            throw new ServicesException("Incorrect password");
+        }
         try {
             DAOSingleton singUser = DAOSingleton.getInstance();
             Registration registration = singUser.getUserImpl();
